@@ -140,7 +140,8 @@ const branchFieldValidator = async (req, res, next) => {
             return res.status(500).json({
                 success: false,
                 status: "INTERNAL_SERVER_ERROR",
-                message: "GitHub API error. Please try again later."
+                message: "GitHub API error. Please try again later.",
+                error: error
             });
         }
 
