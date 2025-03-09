@@ -137,11 +137,12 @@ const branchFieldValidator = async (req, res, next) => {
                     message: "Incorrect Username."
                 });
             }
+            console.error(error)
             return res.status(500).json({
                 success: false,
                 status: "INTERNAL_SERVER_ERROR",
                 message: "GitHub API error. Please try again later.",
-                error: error
+                error: [error]
             });
         }
 
